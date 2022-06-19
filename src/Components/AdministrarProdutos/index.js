@@ -9,7 +9,7 @@ import UpdateProdutos from '../UpdateProdutos';
 import DeleteProdutos from '../DeleteProdutos';
 
 
-const AdminProdutos = () =>{
+const AdminProdutos = () => {
     
     const [produto, setProduto] = useState([]);
     const [categoria, setCategoria] = useState([]);
@@ -48,7 +48,7 @@ const AdminProdutos = () =>{
             <div className='container container-produtos'>
             {produto && produto.map((item, index) => {
                 return (
-                    <Card key={index} style={{ width: '14rem' }} className='card-produto'>
+                    <Card key={index} style={{ width: '14rem', height:'100%'}} className='card-produto'>
                         <Card.Img variant="top" src={item.foto} />
                         <Card.Body>
                             <Card.Title>{item.nome}</Card.Title>

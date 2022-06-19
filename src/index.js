@@ -15,8 +15,8 @@ root.render(
   <React.StrictMode>
   <BrowserRouter>
     <Routes>
-      <Route path='/cadastro/categorias' element={<CadastroCategoria/>}/>
-      <Route path='/admin/categorias' element={<AdminCategoria/>}/>
+      <Route path='/cadastro/categorias/' element={<CadastroCategoria/>}/>
+      <Route path='/admin/categorias/' element={<AdminCategoria/>}/>
       <Route path='/cadastro/produtos' element={<CadastroProdutos/>}/>
       <Route path='/admin/produtos' element={<AdminProdutos/>}/>
       <Route path='/' element={<Home/>}/>
