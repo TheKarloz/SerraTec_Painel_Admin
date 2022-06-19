@@ -33,8 +33,7 @@ const UpdateProdutos = (props) =>{
         const produtoEditado = produto.map( produto => {
           if(produto.id === data.id) {
             return {
-              id: produto.id,
-              ...produtoData
+              id: produto.id,...produtoData
             }
           }
           return produto
@@ -47,11 +46,11 @@ const UpdateProdutos = (props) =>{
         setFoto("")
         
         alert("Produto atualizado com sucesso")
+        window.location.reload()
     }
 
     useEffect(() => {
         setId(props.id);
-        setCategoria(props.categ);
         setNomeProduto(props.nome);
         setValor(props.valor);
         setFoto(props.foto);
@@ -80,8 +79,8 @@ const UpdateProdutos = (props) =>{
                                 <label className="form-label">Valor: R$</label>
                                 <input type="text" className="form-control" placeholder={props.valor} value={valor} onChange={e => setValor(e.target.value)} />
                             </div>
-                            <label className="form-label">Categoria</label>
                             <select className="form-select w-100" value={categoria} onChange={e => setCategoria(e.target.value)}>
+                                <option value="" disabled selected hidden>Selecione a Categoria</option>
                                 <BuscaCategorias />
                             </select>
                             <div className="col-md-9">
@@ -97,7 +96,7 @@ const UpdateProdutos = (props) =>{
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        Close
+                        Cancelar
                     </Button>
                     <Button type='submit' variant="primary" onClick={salvarProduto}>
                         Salvar

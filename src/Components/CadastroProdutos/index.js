@@ -1,12 +1,10 @@
 import {Nav, Container, Navbar, NavDropdown, Button, Modal, Form, Card, Dropdown} from 'react-bootstrap';
 import {useState, useEffect} from 'react'
 import Header from '../Header';
-import axios from 'axios'
 import React, { Component } from "react";
 import './styles.css'
 import Footer from '../Footer';
-import Busca from '../BuscaCategoria';
-import useAxiosGet from '../hooks/useAxiosGet';
+import BuscaCategoria from '../BuscaCategoria';
 import api from "../Service/api"
 
 
@@ -30,10 +28,7 @@ const CadastroProdutos = () => {
     alert("Produto cadastrado com sucesso");
     const { data } = await api.post('/produtos', novoProduto)
 
-    setProduto([
-      ...produto,
-      data
-    ])
+    setProduto([...produto,data])
 
     setNomeProduto("")
     setValor("")
@@ -55,26 +50,25 @@ const CadastroProdutos = () => {
               <label className="form-label">Valor: R$</label>
               <input type="text" className="form-control" placeholder="valor" value={valor} onChange={e => setValor(e.target.value)} />
             </div>
-            <label className="form-label">Categoria</label>
             <select className="form-select w-100" value={categoria} onChange={e => setCategoria(e.target.value)}>
-              <Busca />
+              <option value="" disabled selected hidden>Selecione a Categoria</option>
+              <BuscaCategoria />
             </select>
             <div className="col-md-9">
               <label className="form-label">Foto URL</label>
               <input type="text" className="form-control" placeholder="ULR" value={foto} onChange={e => setFoto(e.target.value)} />
             </div>
-            <div className="col-md-2 moldura-foto bg-dark">
-              <img src={foto} alt="" width="200vw" height="200vh" />
+            <div className="col-md-2 moldura-foto">
+              <img src={foto} alt="" style={{ width: '14rem' }} />
             </div>
-            <hr />
-
-            <div className="col-12 mb-4">
-              <button type="submit" className="btn btn-outline-success" onClick={createProduto}>
+            <div className="col-2 mb-4">
+              <button type="button" className="btn btn-outline-success" onClick={createProduto}>
                 <div className='d-flex align-items-center'>
                   Adicionar
                 </div>
               </button>
             </div>
+            <hr />
           </form>
         </div>
       </div>

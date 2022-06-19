@@ -13,10 +13,6 @@ const BuscaCategorias = () => {
         setCategoria(data)
     }
 
-    const handleClick = () =>{
-
-    }
-
     useEffect(() => {
         getCategoria();
     }, [])
@@ -24,7 +20,7 @@ const BuscaCategorias = () => {
     return(
 
         <>
-            {categoria && categoria.map((item,index) => {return(<option key={index} value={item.nome} onCLick={handleClick}>{item.nome}</option>)})}
+        {categoria && categoria.map((item,index) => {return(<option key={index} value={item.nome}>{item.nome}</option>)})}
         </>
 
     )
