@@ -9,7 +9,7 @@ const Header = () => {
 
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{  height: '80px' }}>
         <Container>
-        <Navbar.Brand><Link to="/">Admin</Link></Navbar.Brand >
+        <Navbar.Brand><Link to="/">🚗</Link></Navbar.Brand >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

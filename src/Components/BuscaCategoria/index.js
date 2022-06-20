@@ -2,15 +2,18 @@ import {Nav, Container, Navbar, NavDropdown, Button, Modal, Form, Card, Dropdown
 import { Location } from "react-router-dom";
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import {useState, useEffect} from 'react'
-import axios from 'axios'
+import api from "../Service/api"
+import AdminCategoria from '../AdministrarCategoria';
+import UpdateCategoria from '../UpdateCategoria';
+
 
 const BuscaCategorias = () => {
     const [categoria, setCategoria] = useState([])
-    console.log(categoria)
 
     const getCategoria = async () => {
-        const { data } = await axios.get('http://localhost:8080/categorias')
+        const { data } = await api.get('/categorias')
         setCategoria(data)
+        console.log(data)
     }
 
     useEffect(() => {
@@ -20,7 +23,11 @@ const BuscaCategorias = () => {
     return(
 
         <>
-        {categoria && categoria.map((item,index) => {return(<option key={index} value={item.nome}>{item.nome}</option>)})}
+            {categoria && categoria.map((item, index) => {return(
+            <>
+                <option key={index} value={item.nome}>{item.nome}</option>
+            </> 
+            )})}
         </>
 
     )

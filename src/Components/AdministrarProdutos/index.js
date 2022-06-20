@@ -7,21 +7,29 @@ import api from "../Service/api"
 import BuscaCategoria from '../BuscaCategoria';
 import UpdateProdutos from '../UpdateProdutos';
 import DeleteProdutos from '../DeleteProdutos';
+import CardProduto from '../CardProduto';
 
 
 const AdminProdutos = () => {
     
     const [produto, setProduto] = useState([]);
-    const [categoria, setCategoria] = useState([]);
+    const [categoria, setCategoria] = useState('TODOS');
     console.log(categoria)
-
-    const filterProduto =  async () =>{
-        produto.filter(item => item)
-    }
 
     const getProduto = async () =>{
         const { data } = await api.get('/produtos');
         setProduto(data);
+    }
+
+    const filtrarProduto = () =>{
+        return(
+            <select className="form-select" onChange={(e) => setCategoria(e.currentTarget.value)}>
+                <option value="" disabled hidden>Selecione a Categoria</option>
+                <option value="TODOS" selected>TODOS</option>
+                <BuscaCategoria />
+            </select>
+        )
+      
     }
 
     useEffect(() => {
@@ -35,10 +43,7 @@ const AdminProdutos = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='col-3'>
-                        <select className="form-select">
-                            <option value="" disabled selected hidden>Selecione a Categoria</option>
-                            <BuscaCategoria/>
-                        </select>
+                        {filtrarProduto()}
                     </div>
                     <div className='col-9'>
                         Filtrar por categoria
@@ -46,36 +51,25 @@ const AdminProdutos = () => {
                 </div>
             </div>
             <div className='container container-produtos'>
-            {produto && produto.map((item, index) => {
-                return (
-                    <Card key={index} style={{ width: '14rem', height:'100%'}} className='card-produto'>
-                        <Card.Img variant="top" src={item.foto} />
-                        <Card.Body>
-                            <Card.Title>{item.nome}</Card.Title>
-                            <Card.Text>
-                                <span>R$:</span> {item.valorUnitario} <br />
-                                <span>CATEGORIA:</span> {item.categoria.nome}
-                                <div>
-                                    <UpdateProdutos className="btn-update"
-                                        id={item.id} 
-                                        nome={item.nome} 
-                                        valor={item.valorUnitario} 
-                                        categ={item.categoria}
-                                        foto={item.foto}
-                                    />
-                                    
-                                    <DeleteProdutos className="btn-update"
-                                        id={item.id} 
-                                        nome={item.nome} 
-                                        valor={item.valorUnitario} 
-                                        categ={item.categoria}
-                                        foto={item.foto}
-                                    />
-                                
-                                </div>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>) } ) }
+                {categoria === 'TODOS' ? produto.map((item, index)=>{ return (
+                    <CardProduto
+                        index={index}
+                        id={item.id}
+                        nome={item.nome}
+                        valor={item.valorUnitario}
+                        categoria={item.categoria.nome}
+                        foto={item.foto}
+                    />
+                )}) 
+                : produto.filter(item => item.categoria.nome === categoria).map((item, index) =>{return(
+                    <CardProduto
+                    index={index}
+                    id={item.id}
+                    nome={item.nome}
+                    valor={item.valorUnitario}
+                    categoria={item.categoria.nome}
+                    foto={item.foto}
+                    />) } ) }
             </div>
             <Footer/>
         </>
