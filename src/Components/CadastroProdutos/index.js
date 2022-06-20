@@ -13,7 +13,6 @@ const CadastroProdutos = () => {
   const [nomeProduto, setNomeProduto] = useState('');
   const [valor, setValor] = useState('');
   const [foto, setFoto] = useState('');
-  // const { tasks } = useAxiosGet('/produtos')
 
   const [produto, setProduto] = useState([]);
   

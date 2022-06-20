@@ -1,9 +1,10 @@
-import {Nav, Container, Navbar, NavDropdown, Button, Modal, Form, Card, Dropdown} from 'react-bootstrap';
+import {Nav, Container, Navbar, NavDropdown, Button, Modal, Form, Card, Dropdown, ListGroupItem} from 'react-bootstrap';
 import {useState, useEffect} from 'react'
 import Header from '../Header';
 import './styles.css'
 import Footer from '../Footer';
 import api from "../Service/api"
+import axos from 'axios'
 import BuscaCategoria from '../BuscaCategoria';
 import UpdateCategoria from '../UpdateCategoria';
 
@@ -38,17 +39,17 @@ const AdminCategoria = () =>{
             <div className='container'> 
                 <div className='row'>
                     {filtrarCategoria()}
-                    {nomeCategoria === 'TODOS' ? categoria.map((item, index) => {return (
+                    {nomeCategoria === 'TODOS' ? categoria.map((item) => {return (
                     <Card>
-                        <Card.Body><span key={index} className='categoria-text'>Categoria: {item.nome}</span> 
+                        <Card.Body><span key={item} className='categoria-text'>Categoria: {item.nome}</span> 
                             <UpdateCategoria
                                 id={item.id}
                                 nome={item.nome}
                             />
                         </Card.Body>
-                    </Card>)}) : categoria.filter(item => item.nome === nomeCategoria).map((item, index) => {return (
+                    </Card>)}) : categoria.filter(item => item.nome === nomeCategoria).map((item) => {return (
                     <Card>
-                        <Card.Body><span key={index} className='categoria-text'>Categoria: {item.nome}</span> 
+                        <Card.Body><span key={item} className='categoria-text'>Categoria: {item.nome}</span> 
                             <UpdateCategoria
                                 id={item.id}
                                 nome={item.nome}

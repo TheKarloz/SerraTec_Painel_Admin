@@ -28,7 +28,7 @@ const UpdateProdutos = (props) =>{
             foto: foto
         }
     
-        const { data } = await api.put(`/produtos/${id}`, produtoData)
+        const { data } = await api.put(`/produtos/${props.id}`, produtoData)
     
         const produtoEditado = produto.map( produto => {
           if(produto.id === data.id) {
@@ -40,7 +40,6 @@ const UpdateProdutos = (props) =>{
         })
     
         setProduto(produtoEditado)
-        setId()
         setNomeProduto("")
         setValor("")
         setFoto("")
@@ -73,19 +72,19 @@ const UpdateProdutos = (props) =>{
                         <form className="row g-3 mt-2">
                             <div className="col-md-6">
                                 <label className="form-label">Nome do Produto:</label>
-                                <input type="text" className="form-control" placeholder={props.nome} value={nomeProduto} onChange={e => setNomeProduto(e.target.value)} />
+                                <input type="text" className="form-control" placeholder={props.nome} onChange={e => setNomeProduto(e.target.value)} />
                             </div>
                             <div className="col-md-6">
                                 <label className="form-label">Valor: R$</label>
-                                <input type="text" className="form-control" placeholder={props.valor} value={valor} onChange={e => setValor(e.target.value)} />
+                                <input type="text" className="form-control" placeholder={props.valor} onChange={e => setValor(e.target.value)} />
                             </div>
-                            <select className="form-select w-100" value={categoria} onChange={e => setCategoria(e.target.value)}>
+                            <select className="form-select w-100" onChange={e => setCategoria(e.target.value)}>
                                 <option value="" disabled selected hidden>Selecione a Categoria</option>
                                 <BuscaCategorias />
                             </select>
                             <div className="col-md-9">
                                 <label className="form-label">Foto URL</label>
-                                <input type="text" className="form-control" placeholder={props.foto} value={foto} onChange={e => setFoto(e.target.value)} />
+                                <input type="text" className="form-control" placeholder={props.foto} onChange={e => setFoto(e.target.value)} />
                             </div>
                             <div className="col-md-6 moldura-foto">
                                 <img src={props.foto} alt="" width="200vw" height="200vh" />

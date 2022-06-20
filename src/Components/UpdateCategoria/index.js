@@ -21,7 +21,7 @@ const UpdateCategoria = (props) =>{
             nome: nomeCategoria
         }
     
-        const { data } = await api.put(`/categorias/${id}`, categoriaData)
+        const { data } = await api.put(`/categorias/${props.id}`, categoriaData)
     
         const categoriaEditada = categoria.map( categoria => {
           if(categoria.id === data.id) {
@@ -33,7 +33,6 @@ const UpdateCategoria = (props) =>{
         })
     
         setCategoria(categoriaEditada)
-        setId()
         setNomeCategoria("")
         
         alert("Categoria atualizada com sucesso")
@@ -62,7 +61,7 @@ const UpdateCategoria = (props) =>{
                         <form className="row g-3 mt-2">
                             <div className="col-md-6">
                                 <label className="form-label">Nome da Categoria:</label>
-                                <input type="text" className="form-control" placeholder={props.nome} value={nomeCategoria} onChange={e => setNomeCategoria(e.target.value)} />
+                                <input type="text" className="form-control" placeholder={props.nome} onChange={e => setNomeCategoria(e.target.value)} />
                             </div>
                         </form>
                     </div>

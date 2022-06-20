@@ -63,12 +63,12 @@ const AdminProdutos = () => {
                 )}) 
                 : produto.filter(item => item.categoria.nome === categoria).map((item, index) =>{return(
                     <CardProduto
-                    index={index}
-                    id={item.id}
-                    nome={item.nome}
-                    valor={item.valorUnitario}
-                    categoria={item.categoria.nome}
-                    foto={item.foto}
+                        index={index}
+                        id={item.id}
+                        nome={item.nome}
+                        valor={item.valorUnitario}
+                        categoria={item.categoria.nome}
+                        foto={item.foto}
                     />) } ) }
             </div>
             <Footer/>
