@@ -34,27 +34,27 @@ const CadastroCategoria = () => {
 
   return (
     <>
-      <div className="body">
         <Header />
-        <h1 className='text-center'>Cadastro de Categorias</h1>
-        <div className="container">
-          <form className="row g-3 mt-2">
-            <div className="col-md-6">
-              <label className="form-label">Nome do Categoria:</label>
-              <input type="text" className="form-control" placeholder="Nome" value={nomeCategoria} onChange={e => setNomeCategoria(e.target.value)} />
-            </div>
-            <div className="col-2 mb-4">
-              <button type="button" className="btn btn-outline-success" onClick={createCategoria}>
-                <div className='d-flex align-items-center'>
-                  Adicionar
-                </div>
-              </button>
-            </div>
-            <hr />
-          </form>
+        <div className="body-categoriaCad">         
+          <div className="container-categoriaCad">
+          <h1 className='text-center'>Cadastro de Categorias</h1>
+            <form className="row g-3 mt-2">
+              <div className="col-md-6">
+                <label className="form-label">Nome do Categoria:</label>
+                <input type="text" className="form-control" placeholder="Nome" value={nomeCategoria} onChange={e => setNomeCategoria(e.target.value)} />
+              </div>
+              <div className="col-2 mb-4">
+                <button type="button" className="btn btn-outline-success" onClick={createCategoria}>
+                  <div className='d-flex align-items-center'>
+                    Adicionar
+                  </div>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-      <Footer className='footer' />
+        <Footer className='footer' />
+      
     </>
   )
 }

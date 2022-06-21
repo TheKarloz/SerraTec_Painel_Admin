@@ -1,5 +1,6 @@
 import {Nav, Container, Navbar, NavDropdown, Button, Modal, Form } from 'react-bootstrap';
 import {useState, render} from 'react'
+import "./styles.css"
 
 
 const ModalLogin = () => {
@@ -11,7 +12,7 @@ const ModalLogin = () => {
     return (
         <>
             <div className="d-flex align-items-center justify-content-center modal-login" style={{ height: "5vh" }}>
-                <Button variant="dark" onClick={handleShow}>
+                <Button className="botao-inicial btn-danger" onClick={handleShow}>
                     Login
                 </Button>
             </div>

@@ -36,10 +36,10 @@ const CadastroProdutos = () => {
 
   return (
     <>
-      <div className="body">
         <Header />
+        <div className="body-produtoCad">
+        <div className="container-cadastroProd">
         <h1 className='text-center'>Cadastro de Produtos</h1>
-        <div className="container">
           <form className="row g-3 mt-2">
             <div className="col-md-6">
               <label className="form-label">Nome do Produto:</label>
@@ -49,7 +49,7 @@ const CadastroProdutos = () => {
               <label className="form-label">Valor: R$</label>
               <input type="text" className="form-control" placeholder="valor" value={valor} onChange={e => setValor(e.target.value)} />
             </div>
-            <select className="form-select w-100" value={categoria} onChange={e => setCategoria(e.target.value)}>
+            <select className="form-select w-95" value={categoria} onChange={e => setCategoria(e.target.value)}>
               <option value="" disabled selected hidden>Selecione a Categoria</option>
               <BuscaCategoria />
             </select>
@@ -61,17 +61,16 @@ const CadastroProdutos = () => {
               <img src={foto} alt="" style={{ width: '14rem' }} />
             </div>
             <div className="col-2 mb-4">
-              <button type="button" className="btn btn-outline-success" onClick={createProduto}>
+              <button className="btn btn-outline-danger" onClick={createProduto}>
                 <div className='d-flex align-items-center'>
                   Adicionar
                 </div>
               </button>
             </div>
-            <hr />
-          </form>
+          </form>    
         </div>
-      </div>
-      <Footer className='footer' />
+        </div>
+        <Footer/>
     </>
   )
 }
