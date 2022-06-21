@@ -2,6 +2,7 @@ import {Buttom, Nav, Container, Navbar, NavDropdown } from 'react-bootstrap';
 import {BrowserRouter, Routes, Route, Navigate, Link} from 'react-router-dom'
 
 
+
 const Header = () => {
 
     return (
@@ -20,11 +21,11 @@ const Header = () => {
                 <NavDropdown.Item><Link to="/cadastro/categorias">Cadastrar Categorias</Link></NavDropdown.Item>
                 <NavDropdown.Item><Link to="/admin/categorias/">Administrar Categorias</Link></NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#pricing">FALE CONOSCO</Nav.Link>
+              <Link to="/FaleConosco">Fale Conosco</Link>
           </Nav>
           <Nav>
             {/* <Nav.Link href="#deets">More deets</Nav.Link> */}
-            <Nav.Link eventKey={2} href="#memes"> 
+            <Nav.Link eventKey={2} href="/login"> Login
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -6,6 +6,7 @@ import AdminProdutos from '../AdministrarProdutos';
 import CadastroCategoria from '../CadastrarCategoria';
 import AdminCategoria from '../AdministrarCategoria';
 import Login from '../pages/login';
+import FaleConosco from '../FaleConosco';
 
 const Rotas = () => {
     const [ user, setUser ] = useState(false)
@@ -29,6 +30,7 @@ const Rotas = () => {
                 {user && <Route path='/cadastro/categorias/' element={<CadastroCategoria />} />}
                 {user && <Route path='/admin/categorias/' element={<AdminCategoria />} />}
                 {user && <Route path='/cadastro/produtos' element={<CadastroProdutos />} />}
+                {user && <Route path='/FaleConosco' element={<FaleConosco />} />}
                 {user && <Route path='/admin/produtos' element={<AdminProdutos />} />}
                 <Route path='/login' element={<Login />} />
                 {user && <Route path='/home' element={<Home />} />}
