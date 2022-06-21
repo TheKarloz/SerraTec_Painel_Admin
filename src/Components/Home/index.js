@@ -14,6 +14,7 @@ const Home = () => {
   return (   
    <>
     <Header/>
+    <div className=" back container-fluid" > </div>
     <Footer/>
    </>
   )

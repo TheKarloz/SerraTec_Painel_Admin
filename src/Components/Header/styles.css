@@ -15,12 +15,26 @@
 
 .icone{
 
-    width: 170px;
-    height: 60px;
-    background-color: white;
+    width: 180px;
+    height: 40px;
     border-radius: 15px;
     padding-left: 5px;
     padding-right: 5px;
+
+}
+
+.fale-conosco{
+
+    color: rgb(155,157,158);
+    text-decoration: none;
+    margin-top: 7px
+
+}
+
+.fale-conosco:hover{
+
+    color: rgb(155,157,158);
+    text-decoration: none;
 
 }
 
@@ -28,6 +42,7 @@ a{
 
     text-decoration: none;
     color: black;
+    margin-left: 5px;
 
 }
 

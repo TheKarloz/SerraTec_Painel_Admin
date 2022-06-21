@@ -9,7 +9,7 @@ const Header = () => {
         // <div className="body">
         <Navbar collapseOnSelect expand="md" className="bg-dark" variant="dark">
         <Container>
-        <Navbar.Brand><Link to="/"><img src="https://cdn.discordapp.com/attachments/979120601966997514/988098938760486922/unknown.png" className="icone"/></Link></Navbar.Brand >
+        <Navbar.Brand><Link to="/"><img src="https://cdn.discordapp.com/attachments/979120601966997514/988940035615227924/Design_sem_nome__15_-removebg-preview.png" className="icone"/></Link></Navbar.Brand >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
             <div className="corpo">
@@ -22,11 +22,12 @@ const Header = () => {
                     <NavDropdown.Item><Link to="/cadastro/categorias" className="text-deco">Cadastrar Categorias</Link></NavDropdown.Item>
                     <NavDropdown.Item><Link to="/admin/categorias/">Administrar Categorias</Link></NavDropdown.Item>
                   </NavDropdown>
-                  <Link to="/faleconosco">Fale Conosco</Link>   
+                  <Link to="/faleconosco" className="fale-conosco" >Fale Conosco </Link>
+                     
               </Nav>           
           <Nav>
             {/* <Nav.Link href="#deets">More deets</Nav.Link> */}
-            <Nav.Link eventKey={2} href="/login"> Login
+            <Nav.Link eventKey={2} href="/login"> LogOut
             </Nav.Link>
           </Nav>
           </div>
