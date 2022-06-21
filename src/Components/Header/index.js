@@ -1,5 +1,4 @@
 import {Buttom, Nav, Container, Navbar, NavDropdown } from 'react-bootstrap';
-import ModalLogin from '../ModalLogin';
 import {BrowserRouter, Routes, Route, Navigate, Link} from 'react-router-dom'
 
 
@@ -9,7 +8,7 @@ const Header = () => {
 
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{  height: '80px' }}>
         <Container>
-        <Navbar.Brand><Link to="/">🚗</Link></Navbar.Brand >
+        <Navbar.Brand><Link to="/home">🚗</Link></Navbar.Brand >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -25,7 +24,6 @@ const Header = () => {
           </Nav>
           <Nav>
             {/* <Nav.Link href="#deets">More deets</Nav.Link> */}
-            <ModalLogin/>
             <Nav.Link eventKey={2} href="#memes"> 
             </Nav.Link>
           </Nav>

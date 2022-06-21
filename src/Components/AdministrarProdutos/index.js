@@ -51,25 +51,30 @@ const AdminProdutos = () => {
                 </div>
             </div>
             <div className='container container-produtos'>
-                {categoria === 'TODOS' ? produto.map((item, index)=>{ return (
-                    <CardProduto
-                        index={index}
-                        id={item.id}
-                        nome={item.nome}
-                        valor={item.valorUnitario}
-                        categoria={item.categoria.nome}
-                        foto={item.foto}
-                    />
-                )}) 
-                : produto.filter(item => item.categoria.nome === categoria).map((item, index) =>{return(
-                    <CardProduto
-                        index={index}
-                        id={item.id}
-                        nome={item.nome}
-                        valor={item.valorUnitario}
-                        categoria={item.categoria.nome}
-                        foto={item.foto}
-                    />) } ) }
+                {categoria === 'TODOS' ? produto.map((item, index) => {
+                    return (
+                        <CardProduto
+                            index={index}
+                            id={item.id}
+                            nome={item.nome}
+                            valor={item.valorUnitario}
+                            categoria={item.categoria.nome}
+                            foto={item.foto}
+                        />
+                    )
+                }): produto.filter(item => item.categoria.nome === categoria).map((item, index) => {
+                        return (
+                            <CardProduto
+                                index={index}
+                                id={item.id}
+                                nome={item.nome}
+                                valor={item.valorUnitario}
+                                categoria={item.categoria.nome}
+                                foto={item.foto}
+                            />
+                        )
+                    })}
+                
             </div>
             <Footer/>
         </>
