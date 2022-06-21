@@ -21,7 +21,7 @@ const CardProduto = (props) =>{
                             categ={props.categoria}
                             foto={props.foto}
                         />
-                        <DeleteProdutos className="btn-update"
+                        <DeleteProdutos className="btn-delete"
                             id={props.id}
                             nome={props.nome}
                             valor={props.valor}

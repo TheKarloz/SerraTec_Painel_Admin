@@ -1,7 +1,6 @@
 import {Buttom, Nav, Container, Navbar, NavDropdown } from 'react-bootstrap';
-import ModalLogin from '../ModalLogin';
-import "./styles.css"
 import {BrowserRouter, Routes, Route, Navigate, Link} from 'react-router-dom'
+import "./styles.css"
 
 
 const Header = () => {
@@ -27,8 +26,7 @@ const Header = () => {
               </Nav>           
           <Nav>
             {/* <Nav.Link href="#deets">More deets</Nav.Link> */}
-            <ModalLogin/>
-            <Nav.Link eventKey={2} href="#memes"> 
+            <Nav.Link eventKey={2} href="/login"> Login
             </Nav.Link>
           </Nav>
           </div>

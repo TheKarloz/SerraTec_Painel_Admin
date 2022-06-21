@@ -36,10 +36,10 @@ const AdminCategoria = () =>{
     return(
         <>
             <Header/>
-            <div className='container'> 
+            <div className='container-adminCate'> 
                 <div className='row'>
                     {filtrarCategoria()}
-                    {nomeCategoria === 'TODOS' ? categoria.map((item) => {return (
+                    {nomeCategoria === 'TODOS' ? categoria.map((item, index) => {return (
                     <Card>
                         <Card.Body><span key={item} className='categoria-text'>Categoria: {item.nome}</span> 
                             <UpdateCategoria
@@ -47,7 +47,7 @@ const AdminCategoria = () =>{
                                 nome={item.nome}
                             />
                         </Card.Body>
-                    </Card>)}) : categoria.filter(item => item.nome === nomeCategoria).map((item) => {return (
+                    </Card>)}) : categoria.filter(item => item.nome === nomeCategoria).map((item, index) => {return (
                     <Card>
                         <Card.Body><span key={item} className='categoria-text'>Categoria: {item.nome}</span> 
                             <UpdateCategoria
