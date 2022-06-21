@@ -20,7 +20,7 @@ const Rotas = () => {
             setUser(true);
             setTimeout(() => {
                 window.location.reload();
-            }, 300000);
+            }, 90000000);
         }
     }, []);
 
@@ -30,7 +30,7 @@ const Rotas = () => {
                 {user && <Route path='/cadastro/categorias/' element={<CadastroCategoria />} />}
                 {user && <Route path='/admin/categorias/' element={<AdminCategoria />} />}
                 {user && <Route path='/cadastro/produtos' element={<CadastroProdutos />} />}
-                {user && <Route path='/FaleConosco' element={<FaleConosco />} />}
+                {user && <Route path='/faleconosco' element={<FaleConosco />} />}
                 {user && <Route path='/admin/produtos' element={<AdminProdutos />} />}
                 <Route path='/login' element={<Login />} />
                 {user && <Route path='/home' element={<Home />} />}

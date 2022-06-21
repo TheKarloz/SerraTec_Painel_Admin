@@ -1,7 +1,6 @@
 import './styles.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Rotas from '../../routes'
 
 const user = {
     login: 'email',
@@ -21,7 +20,6 @@ const Login = () => {
             localStorage.setItem('senha', senha);
             navigate('/home')
         }
-
     }
 
     return (
