@@ -1,6 +1,5 @@
-import {Nav, Container, Navbar, NavDropdown, Button, Modal, Form, Card, Dropdown} from 'react-bootstrap';
+import {Button, Modal} from 'react-bootstrap';
 import {useState, useEffect} from 'react'
-import React, { Component } from "react";
 import './styles.css'
 import BuscaCategorias from '../BuscaCategoria';
 import api from "../Service/api"

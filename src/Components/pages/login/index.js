@@ -19,6 +19,7 @@ const Login = () => {
             localStorage.setItem('email', login);
             localStorage.setItem('senha', senha);
             navigate('/home')
+            window.location.reload()
         }
     }
 

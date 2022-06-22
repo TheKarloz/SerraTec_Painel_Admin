@@ -2,6 +2,7 @@ import {Nav, Container, Navbar, NavDropdown, Button, Modal, Form, Card, Dropdown
 import {useState, useEffect} from 'react'
 import React, { Component } from "react";
 import api from "../Service/api"
+import './styles.css'
 
 const UpdateCategoria = (props) =>{
 
@@ -48,7 +49,7 @@ const UpdateCategoria = (props) =>{
 
     return (
         <>
-            <Button variant="warning" onClick={handleShow}>
+            <Button variant="warning" className='btn-atualizar' onClick={handleShow}>
                 Atualizar
             </Button>
 
@@ -77,9 +78,6 @@ const UpdateCategoria = (props) =>{
             </Modal>
         </>
     );
-
-
-
 }
 
 export default UpdateCategoria;

@@ -1,10 +1,8 @@
-import {Nav, Container, Navbar, NavDropdown, Button, Modal, Form, Card, Dropdown, ListGroupItem} from 'react-bootstrap';
-import {useState, useEffect} from 'react'
+import {Card} from 'react-bootstrap';
+import React, {useState, useEffect} from 'react'
 import Header from '../Header';
 import './styles.css'
-import Footer from '../Footer';
 import api from "../Service/api"
-import axos from 'axios'
 import BuscaCategoria from '../BuscaCategoria';
 import UpdateCategoria from '../UpdateCategoria';
 
@@ -28,7 +26,6 @@ const AdminCategoria = () =>{
         )     
     }
 
-
     useEffect(() => {
         getCategoria();
     }, [])
@@ -41,7 +38,7 @@ const AdminCategoria = () =>{
                     {filtrarCategoria()}
                     {nomeCategoria === 'TODOS' ? categoria.map((item, index) => {return (
                     <Card>
-                        <Card.Body><span key={item} className='categoria-text'>Categoria: {item.nome}</span> 
+                        <Card.Body><span key={index} className='categoria-text'>{item.nome}</span> 
                             <UpdateCategoria
                                 id={item.id}
                                 nome={item.nome}
@@ -49,7 +46,7 @@ const AdminCategoria = () =>{
                         </Card.Body>
                     </Card>)}) : categoria.filter(item => item.nome === nomeCategoria).map((item, index) => {return (
                     <Card>
-                        <Card.Body><span key={item} className='categoria-text'>Categoria: {item.nome}</span> 
+                        <Card.Body><span key={index} className='categoria-text'>{item.nome}</span> 
                             <UpdateCategoria
                                 id={item.id}
                                 nome={item.nome}
@@ -58,7 +55,6 @@ const AdminCategoria = () =>{
                     </Card>)})}
                 </div>
             </div>
-            <Footer/>
         </>
     )
 }

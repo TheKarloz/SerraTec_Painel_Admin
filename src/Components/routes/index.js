@@ -34,10 +34,11 @@ const Rotas = () => {
                 {user && <Route path='/admin/produtos' element={<AdminProdutos />} />}
                 <Route path='/login' element={<Login />} />
                 {user && <Route path='/home' element={<Home />} />}
-                <Route path='*' element={user ? <Home /> : <Navigate to='/login' />} />
+                <Route path='*' element={<Login />} />
             </Routes>
         </BrowserRouter>
     )
+    
 }
 
 export default Rotas

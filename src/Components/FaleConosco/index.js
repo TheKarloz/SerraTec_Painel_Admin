@@ -30,7 +30,7 @@ const FaleConosco = () => {
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>Formulário</Form.Label>
-                    <Form.Control as="textarea" value={txtArea} rows={3} onChange={(e) => setTxtArea(e.target.value)} />
+                    <Form.Control className='textarea' as="textarea" value={txtArea} maxlenght="200"rows={3} onChange={(e) => setTxtArea(e.target.value)} />
                 </Form.Group>
                 </Form>
                 <Button className="botao-fale-conosco btn-dark" onClick={handleShow}>
