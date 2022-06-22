@@ -2,6 +2,7 @@ import Footer from "../Footer"
 import Header from "../Header"
 import {Form, Button, Modal } from "react-bootstrap"
 import React, {useState} from "react"
+import "./styles.css"
 
 const FaleConosco = () => {
       const [show, setShow] = useState(false);
@@ -21,20 +22,24 @@ const FaleConosco = () => {
     return (
         <>
         <Header/>
-            <Form>
-            <Form.Group className="mb-3" >
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" value={email} placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)}/>
-            </Form.Group>
-            <Form.Group className="mb-3">
-                <Form.Label>Formulário</Form.Label>
-                <Form.Control as="textarea" value={txtArea} rows={3} onChange={(e) => setTxtArea(e.target.value)} />
-            </Form.Group>
-            </Form>
-             <Button variant="dark" onClick={handleShow}>
-                Enviar Formulário
-            </Button>
-      <Modal show={show} onHide={handleClose}>
+            <div className="fale-conosco-form">
+                <Form>
+                <Form.Group className="mb-3" >
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" value={email} placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)}/>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Formulário</Form.Label>
+                    <Form.Control as="textarea" value={txtArea} rows={3} onChange={(e) => setTxtArea(e.target.value)} />
+                </Form.Group>
+                </Form>
+                <Button className="botao-fale-conosco btn-dark" onClick={handleShow}>
+                    Enviar Formulário
+                </Button>
+            </div>
+        
+
+            <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                 <Modal.Title>CONFIRMAR ENVIO?</Modal.Title>
                 </Modal.Header>
@@ -47,7 +52,7 @@ const FaleConosco = () => {
                     Enviar
                 </Button>
                 </Modal.Footer>
-            </Modal>
+            </Modal>   
         <Footer className="footer"/>
         </>
        

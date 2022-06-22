@@ -25,7 +25,7 @@
 .container-cadastroProd{
 
     border: 1px solid  black;
-    height: 65vh;
+    height: 75vh;
     width: 70%;
     margin: 0 auto;
     margin-bottom: 10vh;
@@ -33,4 +33,10 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 15px 10px 10px 5px gray;
+    
+}
+
+.moldura-foto{
+    height: 150px;
+    background-size: 100vmax;
 }

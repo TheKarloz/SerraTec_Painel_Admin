@@ -56,15 +56,13 @@ const CadastroProdutos = () => {
             <div className="col-md-9">
               <label className="form-label">Foto URL</label>
               <input type="text" className="form-control" placeholder="ULR" value={foto} onChange={e => setFoto(e.target.value)} />
-            </div>
+            </div>   
             <div className="col-md-2 moldura-foto">
-              <img src={foto} alt="" style={{ width: '14rem' }} />
-            </div>
+              <img src={foto} alt="foto do produto cadastrado" className="foto-produto" />
+            </div>      
             <div className="col-2 mb-4">
-              <button className="btn btn-outline-danger" onClick={createProduto}>
-                <div className='d-flex align-items-center'>
+              <button className="btn btn-outline-danger" onClick={createProduto}>           
                   Adicionar
-                </div>
               </button>
             </div>
           </form>    
